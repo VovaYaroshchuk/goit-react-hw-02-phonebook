@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
+import styles from './ContactForm.module.css';
 
 class ContactForm extends Component {
     state = {
@@ -29,10 +31,10 @@ class ContactForm extends Component {
     }
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form className={styles.form} onSubmit={this.handleSubmit}>
                 <div>
                     Name:
-                    <input
+                    <input className={styles.input}
                         type="text"
                         name="name"
                         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -44,7 +46,7 @@ class ContactForm extends Component {
                 </div>
                 <div>
                     Number:
-                    <input
+                    <input className={styles.input}
                         type="number"
                         name="number"
                         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
@@ -55,11 +57,18 @@ class ContactForm extends Component {
                     />
                 </div>
                 <div>
-                    <button type="submit">add</button>
+                    <button className={styles.btn} type="submit">Add</button>
                 </div>
             </form>
         );
     }
 }
+
+ContactForm.propTypes = {
+    name: PropTypes.string,
+    number: PropTypes.string,
+    onSubmit: PropTypes.func,
+}
+
 
 export default ContactForm;
