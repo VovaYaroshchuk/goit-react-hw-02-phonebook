@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid'
 import styles from "./PhoneBook.module.css";
 import PropTypes from 'prop-types';
 
-class numberBook extends Component {
+class PhoneBook extends Component {
     state = {
         contacts: [{id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
         {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
@@ -65,9 +65,9 @@ class numberBook extends Component {
         );
 }}
 
-numberBook.propTypes = {
+PhoneBook.propTypes = {
     contacts: PropTypes.arrayOf(PropTypes.object),
     filter: PropTypes.string,
 };
 
-export default numberBook;
+export default PhoneBook;
